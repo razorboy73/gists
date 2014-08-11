@@ -80,6 +80,18 @@ And render as a graph.
 
 //graph
 
+[source,cypher]
+----
+
+CREATE (toshi:Person{name:'Toshi Sato'})
+CREATE (terrorismfinance:Experience{name:'Managed development of a terrorism financing analysis system'})
+CREATE (toshi)-[:HAS_EXP]->(terrorismfinance)
+CREATE (terrorismfinance)-[:IS_SIMILAR{degree:19}]->(moneylaundering:Knowledge{name:'Money laundering'})
+----
+And render as a graph.
+
+//graph
+
 NOTE: This document is a GraphGist itself, so you can use the green https://github.com/neo4j-contrib/gists/blob/master/meta/Home.adoc[Page Source] button on top of the page to see the original AsciiDoc document.
 
 We'd love to get your feedback, so feel free to write us at *docs at neo4j.org* or comment in the section below.
