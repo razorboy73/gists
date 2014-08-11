@@ -50,8 +50,12 @@ To see the expressive power of this approach, here are some winners of our past 
 //setup
 [source,cypher]
 ----
-CREATE (you:Person {name:"You"})-[like:LIKE]->(us:Database:NoSql:Graph {name:"Neo4j" })
-RETURN you, like, us
+CREATE (digitalcurrency:Knowledge{name:'Digital currency'}),
+CREATE (electronicmoney:Knowledge{name:'Electronic money'}),
+CREATE (moneylaundering:Knowledge{name:'Money laundering'}),
+CREATE (taxation:Knowledge{name:'Taxation'}),
+CREATE (financialservices:Knowledge{name:'Financial Services'}),
+RETURN digitalcurrency, electronicmoney, moneylaundering, taxation, financialservices
 ----
 
 And render as a graph.
