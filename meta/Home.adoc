@@ -66,13 +66,19 @@ And render as a graph.
 
 [source,cypher]
 ----
-MATCH (you:Person {name:"You"})-[like:LIKE]->(liked)
-RETURN you.name AS who, type(like) AS how, liked.name AS what
+CREATE (david:Person{name:'Dave Petrocelli'})
+CREATE (fcen:Experience{name:'Manager of Latin America Operations for Financial Crimes Enforcement Network'})
+CREATE (citi:Experience{name:'Staff Attorney at Citigroup, Commercial Banking Division'})
+CREATE (david)-[:HAS_EXP]->(fcen)
+CREATE (david)-[:HAS_EXP]->(citi)
+CREATE (fcen)-[:IS_SIMILAR{degree:19}]->(digitalcurrency)
+CREATE (fcen)-[:IS_SIMILAR{degree:15}]->(moneylaundering)
+CREATE (citi)-[:IS_SIMILAR{degree:23}]->(financialservices)
 ----
 
-And render as a table.
+And render as a graph.
 
-//table
+//graph
 
 NOTE: This document is a GraphGist itself, so you can use the green https://github.com/neo4j-contrib/gists/blob/master/meta/Home.adoc[Page Source] button on top of the page to see the original AsciiDoc document.
 
