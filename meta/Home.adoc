@@ -66,14 +66,14 @@ And render as a graph.
 
 [source,cypher]
 ----
-CREATE (david:Person{name:'Dave Petrocelli'})
-CREATE (fcen:Experience{name:'Manager of Latin America Operations for Financial Crimes Enforcement Network'})
-CREATE (citi:Experience{name:'Staff Attorney at Citigroup, Commercial Banking Division'})
-CREATE (david)-[:HAS_EXP]->(fcen)
-CREATE (david)-[:HAS_EXP]->(citi)
-CREATE (fcen)-[:IS_SIMILAR{degree:19}]->(digitalcurrency:Knowledge{name:'Digital currency'})
-CREATE (fcen)-[:IS_SIMILAR{degree:15}]->(moneylaundering:Knowledge{name:'Money laundering'})
-CREATE (citi)-[:IS_SIMILAR{degree:23}]->(financialservices:Knowledge{name:'Financial Services'})
+MERGE (david:Person{name:'Dave Petrocelli'})
+MERGE (fcen:Experience{name:'Manager of Latin America Operations for Financial Crimes Enforcement Network'})
+MERGE (citi:Experience{name:'Staff Attorney at Citigroup, Commercial Banking Division'})
+MERGE (david)-[:HAS_EXP]->(fcen)
+MERGE (david)-[:HAS_EXP]->(citi)
+MERGE (fcen)-[:IS_SIMILAR{degree:19}]->(digitalcurrency:Knowledge{name:'Digital currency'})
+MERGE (fcen)-[:IS_SIMILAR{degree:15}]->(moneylaundering:Knowledge{name:'Money laundering'})
+MERGE (citi)-[:IS_SIMILAR{degree:23}]->(financialservices:Knowledge{name:'Financial Services'})
 ----
 
 And render as a graph.
@@ -82,10 +82,10 @@ And render as a graph.
 
 [source,cypher]
 ----
-CREATE (toshi:Person{name:'Toshi Sato'})
-CREATE (terrorismfinance:Experience{name:'Managed development of a terrorism financing analysis system'})
-CREATE (toshi)-[:HAS_EXP]->(terrorismfinance)
-CREATE (terrorismfinance)-[:IS_SIMILAR{degree:19}]->(moneylaundering:Knowledge{name:'Money laundering'})
+MERGE (toshi:Person{name:'Toshi Sato'})
+MERGE (terrorismfinance:Experience{name:'Managed development of a terrorism financing analysis system'})
+MERGE (toshi)-[:HAS_EXP]->(terrorismfinance)
+MERGE (terrorismfinance)-[:IS_SIMILAR{degree:19}]->(moneylaundering:Knowledge{name:'Money laundering'})
 ----
 And render as a graph.
 
