@@ -71,9 +71,9 @@ CREATE (fcen:Experience{name:'Manager of Latin America Operations for Financial 
 CREATE (citi:Experience{name:'Staff Attorney at Citigroup, Commercial Banking Division'})
 CREATE (david)-[:HAS_EXP]->(fcen)
 CREATE (david)-[:HAS_EXP]->(citi)
-CREATE (fcen)-[:IS_SIMILAR{degree:19}]->(digitalcurrency)
-CREATE (fcen)-[:IS_SIMILAR{degree:15}]->(moneylaundering)
-CREATE (citi)-[:IS_SIMILAR{degree:23}]->(financialservices)
+CREATE (fcen)-[:IS_SIMILAR{degree:19}]->(digitalcurrency:Knowledge{name:'Digital currency'})
+CREATE (fcen)-[:IS_SIMILAR{degree:15}]->(moneylaundering:Knowledge{name:'Money laundering'})
+CREATE (citi)-[:IS_SIMILAR{degree:23}]->(financialservices:Knowledge{name:'Financial Services'})
 ----
 
 And render as a graph.
