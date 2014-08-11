@@ -82,7 +82,6 @@ And render as a graph.
 
 [source,cypher]
 ----
-
 CREATE (toshi:Person{name:'Toshi Sato'})
 CREATE (terrorismfinance:Experience{name:'Managed development of a terrorism financing analysis system'})
 CREATE (toshi)-[:HAS_EXP]->(terrorismfinance)
